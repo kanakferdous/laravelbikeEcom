@@ -18,11 +18,11 @@ class CreateProductsTable extends Migration
             $table->string('name')->unique();
             $table->longText('desc')->nullable();
             $table->string('slag');
-            $table->integer('quantity')->default(1);
+            $table->integer('quantity')->nullable();
             $table->integer('price');
             $table->string('sku')->nullable();
             $table->integer('offerprice')->nullable();
-            $table->tinyInteger('status')->default(0);
+            $table->boolean('status')->nullable();
             $table->timestamps();
         });
     }

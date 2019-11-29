@@ -30,9 +30,9 @@
                                     <li><a href="ecommerce.html"><i class="fa fa-caret-right"></i> Dashboard</a></li>
                                     <li><a href="{{route('brand.index')}}"><i class="fa fa-caret-right"></i>All Brands</a></li>
                                     <li><a href="{{route('category.index')}}"><i class="fa fa-caret-right"></i>All Categories</a></li>
+                                    <li><a href="{{route('product.index')}}"><i class="fa fa-caret-right"></i> Product List </a></li>
                                     <li><a href="ecommerce-order.html"><i class="fa fa-caret-right"></i> Order </a></li>
                                     <li><a href="ecommerce-orderview.html"><i class="fa fa-caret-right"></i> Orders View</a></li>
-                                    <li><a href="ecommerce-products.html"><i class="fa fa-caret-right"></i> Product List </a></li>
                                 </ul>
                             </li>
                             <li class="list-divider"></li>

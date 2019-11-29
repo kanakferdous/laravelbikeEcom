@@ -1,12 +1,12 @@
 (function($) {
     "use strict";
-    
+
     /* jQuery MeanMenu */
     $('#mobile-menu-active').meanmenu({
         meanScreenWidth: "991",
         meanMenuContainer: ".mobile-menu-area .mobile-menu",
     });
-    
+
     /*--
 	Header Search Toggle
     -----------------------------------*/
@@ -20,7 +20,7 @@
             $(this).siblings('.main-menu').addClass('open');
         }
     })
-    
+
     /* slider active */
     $('.slider-active').owlCarousel({
         loop: true,
@@ -42,7 +42,7 @@
             }
         }
     })
-    
+
     /* hover 3d init for tilt */
     if ($('.tilter').length > 0) {
         $('.tilter').tilt({
@@ -54,7 +54,7 @@
             transition: true,
         });
     }
-    
+
     /* testimonial active */
     $('.product-slider-active').owlCarousel({
         loop: true,
@@ -102,7 +102,7 @@
             }
         }
     })
-    
+
     /* testimonial active */
     $('.product-accessories-active').owlCarousel({
         loop: true,
@@ -126,7 +126,7 @@
             }
         }
     })
-    
+
     /* testimonial active */
     $('.testimonial-active').owlCarousel({
         loop: true,
@@ -149,12 +149,12 @@
             }
         }
     })
-    
+
     /* cart */
     $(".icon-cart").on("click", function() {
         $(this).parent().find('.shopping-cart-content').slideToggle('medium');
     })
-    
+
     /*---------------------
     shop grid list
     --------------------- */
@@ -164,32 +164,32 @@
         $(this).parent('li').addClass('active');
         $('.product-view').removeClass('product-grid product-list').addClass($proStyle);
     })
-    
+
     /*--------------------------
     tab active
     ---------------------------- */
     var ProductDetailsSmall = $('.product-details-small a');
-    
+
     ProductDetailsSmall.on('click', function(e) {
         e.preventDefault();
-        
+
         var $href = $(this).attr('href');
-        
+
         ProductDetailsSmall.removeClass('active');
         $(this).addClass('active');
-        
+
         $('.product-details-large .tab-pane').removeClass('active');
         $('.product-details-large ' + $href).addClass('active');
     })
-    
+
     /*------ Wow Active ----*/
     new WOW().init();
-    
+
     /*----------------------------
     	Cart Plus Minus Button
     ------------------------------ */
     var CartPlusMinus = $('.cart-plus-minus');
-    
+
     CartPlusMinus.prepend('<div class="dec qtybutton">-</div>');
     CartPlusMinus.append('<div class="inc qtybutton">+</div>');
     $(".qtybutton").on("click", function() {
@@ -207,14 +207,14 @@
         }
         $button.parent().find("input").val(newVal);
     });
-    
-    
+
+
     /*--
     Menu Stick
     -----------------------------------*/
     var header = $('.transparent-bar');
     var win = $(window);
-    
+
     win.on('scroll', function() {
         var scroll = win.scrollTop();
         if (scroll < 200) {
@@ -223,7 +223,7 @@
             header.addClass('stick');
         }
     });
-    
+
     /*---------------------
     sidebar sticky
     --------------------- */
@@ -232,7 +232,7 @@
         bottomSpacing: 30,
         minWidth: 991,
     });
-    
+
     /*---------------------
     chosen
     --------------------- */
@@ -240,7 +240,7 @@
         disable_search: true,
         width: "auto"
     });
-    
+
     /* product-dec-slider active */
     $('.product-dec-slider').owlCarousel({
         loop: true,
@@ -262,7 +262,7 @@
             }
         }
     })
-    
+
     /*---------------------
     price slider
     --------------------- */
@@ -281,29 +281,29 @@
         amountprice.val("$" + sliderrange.slider("values", 0) +
             " - $" + sliderrange.slider("values", 1));
     });
-    
-    
+
+
     // Instantiate EasyZoom instances
     var $easyzoom = $('.easyzoom').easyZoom();
-    
-    
+
+
     /*--- showlogin toggle function ----*/
     $('#showlogin').on('click', function() {
         $('#checkout-login').slideToggle(900);
     });
-    
-    
+
+
     /*--- showlogin toggle function ----*/
     $('#showcoupon').on('click', function() {
         $('#checkout_coupon').slideToggle(900);
     });
-    
-    
+
+
     /*--- showlogin toggle function ----*/
     $('#ship-box').on('click', function() {
         $('#ship-box-info').slideToggle(1000);
     })
-    
+
     /*--------------------------
      ScrollUp
     ---------------------------- */

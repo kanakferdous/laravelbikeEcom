@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="{{asset('frontend/assets/css/bootstrap.min.css')}}">
 <link rel="stylesheet" href="{{asset('frontend/assets/css/animate.css')}}">
 <link rel="stylesheet" href="{{asset('frontend/assets/css/owl.carousel.min.css')}}">
+<link rel="stylesheet" href="{{asset('frontend/assets/css/easyzoom.css')}}">
 <link rel="stylesheet" href="{{asset('frontend/assets/css/chosen.min.css')}}">
 <link rel="stylesheet" href="{{asset('frontend/assets/css/icofont.css')}}">
 <link rel="stylesheet" href="{{asset('frontend/assets/css/themify-icons.css')}}">

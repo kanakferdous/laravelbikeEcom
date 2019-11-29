@@ -12,9 +12,8 @@
 */
 
 Route::get('/admin', 'backendController@index');
-Route::get('/home', 'frontend\frontendController@index');
+Route::resource('/home', 'frontend\ProductController');
 
 Route::resource('/brand', 'BrandController');
 Route::resource('/category', 'CategoryController');
 Route::resource('/product', 'ProductController');
-Route::resource('/product_image', 'imageContorller');

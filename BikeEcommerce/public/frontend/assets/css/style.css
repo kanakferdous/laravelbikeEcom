@@ -6,9 +6,9 @@
     Version: 1.0
 
 -----------------------------------------------------------------------------------
-    
-    [Table of contents] 
-	
+
+    [Table of contents]
+
     1. Template default css (assets/css/bundle.css)
     2. Home page style
     3. About us
@@ -21,7 +21,7 @@
     10. Blog page
     11. Blog details
     12. Scrollup
-    
+
 -----------------------------------------------------------------------------------*/
 
 /*----------- 2. Home page style --------*/
@@ -177,9 +177,9 @@
     width: 100%;
 }
 
-.logo-small-device a.logo-for-sticky , 
-.stick .logo-small-device a.logo-sticky-none , 
-.menu-toggle.menu-for-sticky , 
+.logo-small-device a.logo-for-sticky ,
+.stick .logo-small-device a.logo-sticky-none ,
+.menu-toggle.menu-for-sticky ,
 .stick .menu-toggle.menu-sticky-none {
     display: none;
 }
@@ -924,6 +924,9 @@
     position: relative;
     box-shadow: 0 2px 8px .5px rgba(0, 0, 0, 0.22);
     overflow: hidden;
+    display: inline-block;
+    padding: 0px;
+    margin: 0px 15px 0px 0px;
 }
 .product-list .product-wrapper {
     align-items: center;
@@ -1224,7 +1227,7 @@
 .testimonial-dec > p span {
     font-size: 16px;
     font-weight: 600;
-    color: #303030; 
+    color: #303030;
 }
 .name-designation > h4 {
     font-size: 18px;
@@ -2412,7 +2415,7 @@ button.product-filter-toggle:hover,
 }
 .product-list .product-img {
     flex: 0 0 370px;
-    margin-right: 50px;                                               
+    margin-right: 50px;
 }
 .product-list.product-list-width-2 .product-img {
     flex: 0 0 260px;

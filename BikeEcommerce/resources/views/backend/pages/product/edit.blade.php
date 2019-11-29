@@ -71,7 +71,10 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="product-name-input">Product Status</label>
                                 <div class="col-md-9">
-                                    <input type="text" value="{{$item->status}}" id="product-name-input" class="form-control" placeholder="product Name" name="productstatus">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="productstatus" value="1" @if ($item->status == 1)
+                                        {{'checked'}}
+                                    @endif>
+                                    <label class="form-check-label" for="exampleCheck1">Publish</label>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -80,7 +83,7 @@
                                     <div class="panel-body">
                                         @foreach ($item->image as $product_image)
                                             <img width ="20%"src="{{asset('/storage/backend/img/product/'. $product_image->file)}}">
-                                            <a href="'/product_image/'{{$product_image->id}}"><span class="glyphicon glyphicon-trash"></span></a>
+                                            <a href="'/delete/'{{$product_image->id}}"><span class="glyphicon glyphicon-trash"></span></a>
                                         @endforeach
                                     </div>
                                     <input type="file" id="product-name-input" class="form-control" placeholder="product Name" name="file[]" multiple>
@@ -116,7 +119,7 @@
                                             <label class="input-group-text" for="inputGroupSelect01">
                                             </label>
                                         </div>
-                                        <select class="custom-select" id="inputGroupSelect01" name="categories[]" multiple = "multiple">
+                                        <select class="custom-select" id="inputGroupSelect01" name="brands[]" multiple = "multiple">
                                         @foreach ($brands as $brand)
                                         <option value="{{$brand->id}}"
                                                 @foreach ($item->brands as $postbrand)

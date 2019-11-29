@@ -70,7 +70,8 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="product-name-input">Product Status</label>
                                 <div class="col-md-9">
-                                    <input type="text" id="product-name-input" class="form-control" placeholder="product Name" name="productstatus">
+                                    <input type="checkbox" name="productstatus" class="form-check-input" id="exampleCheck1" value="1" >
+                                    <label class="form-check-label" for="exampleCheck1">Publish</label>
                                 </div>
                             </div>
                             <div class="form-group">
