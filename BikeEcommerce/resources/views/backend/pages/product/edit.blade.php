@@ -80,7 +80,7 @@
                                     <div class="panel-body">
                                         @foreach ($item->image as $product_image)
                                             <img width ="20%"src="{{asset('/storage/backend/img/product/'. $product_image->file)}}">
-                                            <a href="{{('/product_image/'.$product_image->id) }}"><span class="glyphicon glyphicon-trash"></span></a>
+                                            <a href="'/product_image/'{{$product_image->id}}"><span class="glyphicon glyphicon-trash"></span></a>
                                         @endforeach
                                     </div>
                                     <input type="file" id="product-name-input" class="form-control" placeholder="product Name" name="file[]" multiple>
