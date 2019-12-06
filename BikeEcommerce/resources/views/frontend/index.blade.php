@@ -1,6 +1,50 @@
 @extends('frontend.layout.master')
 @section('body')
-@include('frontend.includes.slider')
+<div class="slider-area">
+        <div class="slider-active owl-carousel">
+                @foreach ($sliders as $slider)
+                <div class="single-slider slider-1" style="background-image: url({{asset('frontend/assets/img/slider/slider-bg.jpg')}})">
+                    <div class="container">
+                        <div class="slider-content slider-animated-1">
+                            <div class="slider-img text-center">
+                                <img class="animated" src="{{asset('backend/img/slider/'. $slider->image)}}" alt="slider images">
+                            </div>
+                            <div class="slider-text-img">
+                                <h6 class="animated">BOOK YOUR BIKE INSTANTLY AND ENJOY DISCOUNT</h6>
+                                <img class="animated" src="{{asset('frontend/assets/img/icon-img/bike.png')}}" alt="slider images">
+                            </div>
+                            <h2 class="animated">MOTORCYCLE</h2>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        <div class="slider-social">
+            <ul>
+                @foreach ($socials as $social)
+                    <li class="{{$social->name}}"><a href="{{$social->link}}"><i class="icofont icofont-social-{{$social->name}}"></i></a></li>
+                @endforeach
+            </ul>
+        </div>
+        <div class="language-currency-wrapper">
+            <div class="language-currency">
+                <div class="language">
+                    <select class="select-header orderby">
+                        <option value="">ENG</option>
+                        <option value="">BANGLA </option>
+                        <option value="">HINDI</option>
+                    </select>
+                </div>
+                <div class="currency">
+                    <select class="select-header orderby">
+                        <option value="">$USD</option>
+                        <option value="">US </option>
+                        <option value="">EURO</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
 <div class="overview-area pt-135">
     <div class="container">
         <div class="row">
@@ -103,9 +147,9 @@
                                 </div>
                                 <div class="product-price">
                                     @if(is_null($product->offerprice))
-                                        <span>$ {{ $product->price}}</span>
+                                        <span>{{ $product->price}}</span>
                                         @elseif(!is_null($product->offerprice))
-                                        <span><del>$ {{ $product->price}}</del>   ${{$product->offerprice}}</span>
+                                        <span><del>{{ $product->price}}</del>{{$product->offerprice}}</span>
                                         @endif
                                 </div>
                             </div>
@@ -121,20 +165,37 @@
 <div class="latest-product-area pt-205 pb-145 bg-img" style="background-image: url({{asset('frontend/assets/img/banner/banner-4.jpg')}})">
     <div class="container-fluid">
         <div class="latest-product-slider owl-carousel">
+            @foreach ($products as $product)
             <div class="single-latest-product slider-animated-2">
                 <div class="row">
                     <div class="col-lg-7 col-md-12 col-12">
                         <div class="latest-product-img">
-                            <img class="animated" src="{{asset('frontend/assets/img/banner/banner-2.png')}}" alt="image">
+                            @php
+                                $i=1;
+                            @endphp
+                            @foreach ($product->image as $product_image)
+                            @if ($i>0)
+                                <img class="animated" src="{{asset('storage/backend/img/product/'.$product_image->file)}}" alt="">
+                            @endif
+                            @php
+                                $i--;
+                            @endphp
+                            @endforeach
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-12 col-12">
                         <div class="latest-product-content">
                             <h2 class="animated">LATEST OFFER <br>FOR POPULAR BIKES</h2>
-                            <p class="animated"><span>OSWAN</span> the most latgest bike store in the wold can serve you latest            qulity of motorcycle also you can sell here your motorcycle it quo minus iduod maxie placeat facere possimus, omnis voluptas assumenda est, omnis dolor llendus. Temporibus autem quibusdam </p>
+                            <p class="animated"><span>{{$product->name}}</span>{{$product->desc}}</p>
                             <div class="latest-price">
-                                <h3 class="animated">NOW AT <span>$1250</span></h3>
-                                <span class="animated">35% DISCOUNT</span>
+                                <h3 class="animated">NOW AT <span>${{$product->offerprice}}</span></h3>
+                                @php
+                                    $regprice = $product->price;
+                                    $offprice = $product->offerprice;
+                                    $discount = ($regprice-$offprice)%100;
+                                @endphp
+                                <span class="animated">
+                                    {{$discount}}% DISCOUNT</span>
                             </div>
                             <div class="latext-btn">
                                 <a class="animated" href="#">SELECT A BIKE</a>
@@ -143,28 +204,7 @@
                     </div>
                 </div>
             </div>
-            <div class="single-latest-product slider-animated-2">
-                <div class="row">
-                    <div class="col-lg-7 col-col-12 col-12">
-                        <div class="latest-product-img">
-                            <img class="animated" src="{{asset('frontend/assets/img/banner/banner-3.png')}}" alt="image">
-                        </div>
-                    </div>
-                    <div class="col-lg-5 col-col-12 col-12">
-                        <div class="latest-product-content">
-                            <h2 class="animated">LATEST OFFER <br>FOR POPULAR BIKES</h2>
-                            <p class="animated"><span>OSWAN</span> the most latgest bike store in the wold can serve you latest            qulity of motorcycle also you can sell here your motorcycle it quo minus iduod maxie placeat facere possimus, omnis voluptas assumenda est, omnis dolor llendus. Temporibus autem quibusdam </p>
-                            <div class="latest-price">
-                                <h3 class="animated">NOW AT <span>$1250</span></h3>
-                                <span class="animated">35% DISCOUNT</span>
-                            </div>
-                            <div class="latext-btn">
-                                <a class="animated" href="#">SELECT A BIKE</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>

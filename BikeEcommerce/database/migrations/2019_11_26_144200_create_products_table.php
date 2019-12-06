@@ -19,10 +19,11 @@ class CreateProductsTable extends Migration
             $table->longText('desc')->nullable();
             $table->string('slag');
             $table->integer('quantity')->nullable();
-            $table->integer('price');
+            $table->string('price');
             $table->string('sku')->nullable();
-            $table->integer('offerprice')->nullable();
+            $table->string('offerprice')->nullable();
             $table->boolean('status')->nullable();
+            $table->boolean('featured')->nullable();
             $table->timestamps();
         });
     }

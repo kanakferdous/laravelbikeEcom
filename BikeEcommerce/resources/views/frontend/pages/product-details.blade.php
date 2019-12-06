@@ -53,9 +53,9 @@
                         </div>
                         <div class="product-price">
                             @if(is_null($item->offerprice))
-                                <span>$ {{ $item->price}}</span>
+                                <span>{{ $item->price}}</span>
                                 @elseif(!is_null($item->offerprice))
-                                <span><del>$ {{ $item->price}}</del>   ${{$item->offerprice}}</span>
+                                <span><del>{{ $item->price}}</del>{{$item->offerprice}}</span>
                                 @endif
                         </div>
                         <div class="product-overview">
@@ -89,7 +89,7 @@
                             <ul>
                                 @foreach ($item->categories as $category)
                                 <li>
-                                    <a href="#">{{$category->name.','}}</a>
+                                    <a href="{{'/product/category/'. $category->id}}">{{$category->name.','}}</a>
                                 </li>
                                 @endforeach
                             </ul>
@@ -99,7 +99,7 @@
                             <ul>
                                 @foreach ($item->brands as $brand)
                                 <li>
-                                    <a href="#">{{$brand->name.','}}</a>
+                                    <a href="{{'/product/brand/'. $brand->id}}">{{$brand->name.','}}</a>
                                 </li>
                                 @endforeach
                             </ul>

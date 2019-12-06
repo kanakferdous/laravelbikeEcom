@@ -27,12 +27,26 @@
                                 </a>
                                 <!--Submenu-->
                                 <ul class="collapse">
-                                    <li><a href="ecommerce.html"><i class="fa fa-caret-right"></i> Dashboard</a></li>
+                                    <li><a href="/admin"><i class="fa fa-caret-right"></i> Dashboard</a></li>
                                     <li><a href="{{route('brand.index')}}"><i class="fa fa-caret-right"></i>All Brands</a></li>
                                     <li><a href="{{route('category.index')}}"><i class="fa fa-caret-right"></i>All Categories</a></li>
                                     <li><a href="{{route('product.index')}}"><i class="fa fa-caret-right"></i> Product List </a></li>
                                     <li><a href="ecommerce-order.html"><i class="fa fa-caret-right"></i> Order </a></li>
                                     <li><a href="ecommerce-orderview.html"><i class="fa fa-caret-right"></i> Orders View</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span class="menu-title">Theme Option</span>
+                                <i class="arrow"></i>
+                                </a>
+                                <!--Submenu-->
+                                <ul class="collapse">
+                                    <li><a href="{{route('slider.index')}}"><i class="fa fa-caret-right"></i> Slider Setting</a></li>
+                                    <li><a href="{{route('division.index')}}"><i class="fa fa-caret-right"></i> All Divisions</a></li>
+                                    <li><a href="{{route('district.index')}}"><i class="fa fa-caret-right"></i> All Districts</a></li>
+                                    <li><a href="{{route('social.index')}}"><i class="fa fa-caret-right"></i> All Social</a></li>
                                 </ul>
                             </li>
                             <li class="list-divider"></li>

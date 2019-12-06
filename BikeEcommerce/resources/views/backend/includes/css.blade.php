@@ -15,6 +15,7 @@
 <link href="{{asset('backend/plugins/bootstrap-select/bootstrap-select.min.css')}}" rel="stylesheet">
 <!--Bootstrap Validator [ OPTIONAL ]-->
 <link href="{{asset('backend/plugins/bootstrap-validator/bootstrapValidator.min.css')}}" rel="stylesheet">
+<link href="{{asset('backend/plugins/switchery/switchery.min.css')}}" rel="stylesheet">
 <!--jVector Map [ OPTIONAL ]-->
 <link href="{{asset('backend/plugins/jvectormap/jquery-jvectormap.css')}}" rel="stylesheet">
 <!--Demo [ DEMONSTRATION ]-->

@@ -52,7 +52,8 @@ class ProductController extends Controller
         $product->price = $request->productprice;
         $product->sku = $request->productsku;
         $product->offerprice = $request->productofferprice;
-        $product->status = $request->productstatus;
+        $product->status = $request->productstatus ? $request->productstatus : 0;
+        $product->featured = $request->fetproduct ? $request->fetproduct : 0;
         $product->save();
         $product->brands()->sync($request->brands);
         $product->categories()->sync($request->categories);
@@ -115,7 +116,8 @@ class ProductController extends Controller
         $product->price = $request->productprice;
         $product->sku = $request->productsku;
         $product->offerprice = $request->productofferprice;
-        $product->status = $request->productstatus;
+        $product->status = $request->productstatus ? $request->productstatus : 0;
+        $product->featured = $request->fetproduct ? $request->fetproduct : 0;
         $product->save();
         $product->brands()->sync($request->brands);
         $product->categories()->sync($request->categories);

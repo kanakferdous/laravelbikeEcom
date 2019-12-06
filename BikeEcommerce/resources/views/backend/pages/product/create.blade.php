@@ -50,6 +50,13 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label class="col-md-3 control-label" for="product-name-input">Featured Product</label>
+                                <div class="col-md-9">
+                                    <input type="checkbox" name="fetproduct" class="form-check-input" id="exampleCheck1" value="1" >
+                                    <label class="form-check-label" for="exampleCheck1">Featured</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label class="col-md-3 control-label" for="product-name-input">Product Price</label>
                                 <div class="col-md-9">
                                     <input type="text" value="@yield('editproductprice')" id="product-name-input" class="form-control" placeholder="product Name" name="productprice">

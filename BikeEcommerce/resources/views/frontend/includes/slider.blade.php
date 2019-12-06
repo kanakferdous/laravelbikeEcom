@@ -14,34 +14,6 @@
                 </div>
             </div>
         </div>
-        <div class="single-slider slider-1" style="background-image: url({{asset('frontend/assets/img/slider/slider-bg.jpg')}})">
-            <div class="container">
-                <div class="slider-content slider-animated-1">
-                    <div class="slider-img text-center">
-                        <img class="animated" src="{{asset('frontend/assets/img/slider/bike-2.png')}}" alt="slider images">
-                    </div>
-                    <div class="slider-text-img">
-                        <h6 class="animated">BOOK YOUR BIKE INSTANTLY AND ENJOY DISCOUNT</h6>
-                        <img class="animated" src="{{asset('frontend/assets/img/icon-img/bike.png')}}" alt="slider images">
-                    </div>
-                    <h2 class="animated">MOTORCYCLE</h2>
-                </div>
-            </div>
-        </div>
-        <div class="single-slider slider-1" style="background-image: url({{asset('frontend/assets/img/slider/slider-bg.jpg')}})">
-            <div class="container">
-                <div class="slider-content slider-animated-1">
-                    <div class="slider-img text-center">
-                        <img class="animated" src="{{asset('frontend/assets/img/slider/bike-1.png')}}" alt="slider images">
-                    </div>
-                    <div class="slider-text-img">
-                        <h6 class="animated">BOOK YOUR BIKE INSTANTLY AND ENJOY DISCOUNT</h6>
-                        <img class="animated" src="{{asset('frontend/assets/img/icon-img/bike.png')}}" alt="slider images">
-                    </div>
-                    <h2 class="animated">MOTORCYCLE</h2>
-                </div>
-            </div>
-        </div>
     </div>
     <div class="slider-social">
         <ul>

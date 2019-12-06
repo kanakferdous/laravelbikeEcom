@@ -6,6 +6,7 @@ use App\Product;
 use App\brand;
 use App\Category;
 use App\product_image;
+use App\slider;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 

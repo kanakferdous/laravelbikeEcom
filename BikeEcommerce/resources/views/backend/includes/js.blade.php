@@ -24,6 +24,7 @@
 <script src="{{asset('backend/plugins/bootstrap-validator/bootstrapValidator.min.js')}}"></script>
 <!--Flot Chart [ OPTIONAL ]-->
 <script src="{{asset('backend/plugins/flot-charts/jquery.flot.min.js')}}"></script>
+<script src="{{asset('backend/plugins/switchery/switchery.min.js')}}"></script>
 <script src="{{asset('backend/plugins/flot-charts/jquery.flot.resize.min.js')}}"></script>
 <!--Flot Order Bars Chart [ OPTIONAL ]-->
 <script src="{{asset('backend/plugins/flot-charts/jquery.flot.categories.js')}}"></script>
