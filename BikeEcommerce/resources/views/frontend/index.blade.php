@@ -131,9 +131,13 @@
                                 @endforeach
                             </a>
                             <div class="product-action">
-                                <a class="action-plus-2" title="Add To Cart" href="#">
-                                    <i class=" ti-shopping-cart"></i>
-                                </a>
+                                <form action="{{route('cart.store')}}" method="POST">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" value="{{$product->id}}" name="id">
+                                    <input type="hidden" value="{{$product->name}}" name="name">
+                                    <input type="hidden" value="{{$product->price}}" name="price">
+                                    <button type="submit" class="action-plus-2"><i class=" ti-shopping-cart"></i></button>
+                                </form>
                                 <a class="action-cart-2" title="Wishlist" href="#">
                                     <i class=" ti-heart"></i>
                                 </a>
@@ -150,7 +154,7 @@
                                         <span>{{ $product->price}}</span>
                                         @elseif(!is_null($product->offerprice))
                                         <span><del>{{ $product->price}}</del>{{$product->offerprice}}</span>
-                                        @endif
+                                    @endif
                                 </div>
                             </div>
                         </div>

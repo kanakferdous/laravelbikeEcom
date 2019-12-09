@@ -1,18 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\frontend;
+namespace App\Http\Controllers;
 
 use App\Product;
-use App\brand;
-use App\Category;
-use App\product_image;
-use App\slider;
 use Darryldecode\Cart\Facades\CartFacade;
 use Cart;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class productController extends Controller
+class CartController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,8 +16,8 @@ class productController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-        return view('frontend.index', compact('products'));
+
+        return view('frontend.pages.cart');
     }
 
     /**
@@ -32,7 +27,7 @@ class productController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -43,55 +38,64 @@ class productController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = new Product;
+        $product->id = $request->id;
+        $product->name = $request->name;
+        $product->price = $request->price;
+        Cart::add($request->id, $request->name, $request->price, 1);
+        return redirect('/shop')->with('success_message', 'Item was added to your cart!');
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\cart  $cart
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(cart $cart)
     {
-        $brands = brand::all();
-        $categories = Category::all();
-        $products_image = product_image::all();
-        $item = Product::find($id);
-        return view ('frontend.pages.product-details', compact('item','products_image','brands','categories'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\cart  $cart
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
+        $products = Product::find($id);
+        return view('frontend.pages.cart', compact('products'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\cart  $cart
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+        $product->id = $request->id;
+        $product->name = $request->name;
+        $product->price = $request->price;
+        Cart::update($request->id, $request->name, $request->price, 1);
+        return redirect('/cart');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\cart  $cart
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        Cart::remove($id);
+        return redirect('/cart');
     }
 }

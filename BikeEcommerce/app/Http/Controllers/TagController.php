@@ -1,18 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\frontend;
+namespace App\Http\Controllers;
 
-use App\Product;
-use App\brand;
-use App\Category;
-use App\product_image;
-use App\slider;
-use Darryldecode\Cart\Facades\CartFacade;
-use Cart;
-use App\Http\Controllers\Controller;
+use App\tag;
 use Illuminate\Http\Request;
 
-class productController extends Controller
+class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,8 +14,8 @@ class productController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-        return view('frontend.index', compact('products'));
+        $tags = tag::all();
+        return view('backend.pages.blog.tag.index', compact('tags'));
     }
 
     /**
@@ -32,7 +25,7 @@ class productController extends Controller
      */
     public function create()
     {
-        //
+        return view ('backend.pages.blog.tag.create');
     }
 
     /**
@@ -43,55 +36,62 @@ class productController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tag = new tag;
+        $tag->name = $request->tagname;
+        $tag->desc = $request->tagdesc;
+        $tag->save();
+        return redirect ('tag');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(tag $tag)
     {
-        $brands = brand::all();
-        $categories = Category::all();
-        $products_image = product_image::all();
-        $item = Product::find($id);
-        return view ('frontend.pages.product-details', compact('item','products_image','brands','categories'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\tag  $tag
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
+        $item = tag :: find($id);
+        return view ('backend.pages.blog.tag.edit', compact('item'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\tag  $tag
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        //
+        $tag = tag::find($id);
+        $tag->name = $request->tagname;
+        $tag->desc = $request->tagdesc;
+        $tag->save();
+        return redirect ('tag');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\tag  $tag
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        $tag = tag::find($id);
+        $tag->delete();
+        return redirect ('/tag');
     }
 }

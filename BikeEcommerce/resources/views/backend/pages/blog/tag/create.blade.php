@@ -6,7 +6,7 @@
     <!--Page Title-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <div class="pageheader">
-        <h3><i class="fa fa-home"></i> Create Post Category </h3>
+        <h3><i class="fa fa-home"></i> Create Post Tags </h3>
     </div>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--End page title-->
@@ -17,42 +17,30 @@
             <div class="col-md-12">
                 <div class="panel">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Create a New Post Category</h3>
+                            <h3 class="panel-title">Create a New Post Tags</h3>
                         </div>
                         <!-- BASIC FORM ELEMENTS -->
                         <!--===================================================-->
-                        <form class="panel-body form-horizontal" action="/postcategory/@yield('editid')" method="post" enctype="multipart/form-data">
+                        <form class="panel-body form-horizontal" action="/tag/@yield('editid')" method="post" enctype="multipart/form-data">
                             {{csrf_field()}}
                             @section('editmethod')
                             @show
                             <div class="form-group">
-                                <label class="col-md-3 control-label" for="category-name-input">Post Category Name</label>
+                                <label class="col-md-3 control-label" for="category-name-input">Tag Name</label>
                                 <div class="col-md-9">
-                                    <input type="text" id="category-name-input" class="form-control" placeholder="Post Category Name" name="postcategoryname">
+                                    <input type="text" id="category-name-input" class="form-control" placeholder="Tag Name" name="tagname">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-3 control-label" for="category-desc-input">Post Category Description</label>
+                                <label class="col-md-3 control-label" for="category-desc-input">Tag Description</label>
                                 <div class="col-md-9">
-                                    <textarea id="category-desc-input" rows="9" class="form-control" placeholder="Post Category Description" name="postcategorydesc"></textarea>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="category-image-input">Post Category Image</label>
-                                <div class="col-md-9">
-                                    <input type="file" id="category-image-input" class="form-control" placeholder="Post Category Image" name="postcategoryimg">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="category-name-input">Post Category Parent ID</label>
-                                <div class="col-md-9">
-                                    <input type="text" id="category-name-input" class="form-control" placeholder="Post Category Parent ID" name="postcatparentsid">
+                                    <textarea id="category-desc-input" rows="9" class="form-control" placeholder="Tag Description" name="tagdesc"></textarea>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="category-info-submit"></label>
                                 <div class="col-md-9">
-                                    <input type="submit" id="category-info-submit" class="btn btn-primary" value="Add Post Category">
+                                    <input type="submit" id="category-info-submit" class="btn btn-primary" value="Add New Tag">
                                 </div>
                             </div>
                         </form>

@@ -105,7 +105,7 @@
                                 <h4>total: <span>$550.00</span></h4>
                             </div>
                             <div class="shopping-cart-btn">
-                                <a class="btn-style cr-btn" href="#">checkout</a>
+                                <a class="btn-style cr-btn" href="{{route('cart.index')}}">Go to Cart</a>
                             </div>
                         </div>
                     </div>
@@ -148,59 +148,44 @@
             </div>
         </div>
         <div class="header-cart-wrapper">
+            @php
+                $cartTotalQuantity = Cart::getTotalQuantity();
+                $subtotal = Cart::getSubTotal();
+                $cartCollection = Cart::getContent();
+            @endphp
             <div class="header-cart">
                 <button class="icon-cart">
                     <i class="ti-shopping-cart"></i>
-                    <span class="count-style">02</span>
-                    <span class="count-price-add">$295.95</span>
+                    <span class="count-style">{{$cartCollection->count()}}</span>
+                    <span class="count-price-add">{{$subtotal}}</span>
                 </button>
                 <div class="shopping-cart-content">
                     <ul>
+                        @foreach (Cart::getContent() as $item)
                         <li class="single-shopping-cart">
                             <div class="shopping-cart-img">
                                 <a href="#"><img alt="" src="assets/img/cart/cart-1.jpg"></a>
                             </div>
                             <div class="shopping-cart-title">
-                                <h3><a href="#">Gloriori GSX 250 R </a></h3>
-                                <span>Price: $275</span>
-                                <span>Qty: 01</span>
+                                <h3><a href="{{'/home/'.$item->id}}">{{$item->name}}</a></h3>
+                                <span>Price: {{$item->price}}</span>
+                                <span>Qty: {{$item->quantity}}</span>
                             </div>
                             <div class="shopping-cart-delete">
-                                <a href="#"><i class="icofont icofont-ui-delete"></i></a>
+                                <form action="{{'/cart/'. $item->id}}" method="POST">
+                                    {{ csrf_field() }}
+                                    {{method_field('DELETE')}}
+                                    <button type="submit"><i class="icofont icofont-ui-delete"></i></button>
+                                </form>
                             </div>
                         </li>
-                        <li class="single-shopping-cart">
-                            <div class="shopping-cart-img">
-                                <a href="#"><img alt="" src="assets/img/cart/cart-2.jpg"></a>
-                            </div>
-                            <div class="shopping-cart-title">
-                                <h3><a href="#">Demonissi Gori</a></h3>
-                                <span>Price: $275</span>
-                                <span class="qty">Qty: 01</span>
-                            </div>
-                            <div class="shopping-cart-delete">
-                                <a href="#"><i class="icofont icofont-ui-delete"></i></a>
-                            </div>
-                        </li>
-                        <li class="single-shopping-cart">
-                            <div class="shopping-cart-img">
-                                <a href="#"><img alt="" src="assets/img/cart/cart-3.jpg"></a>
-                            </div>
-                            <div class="shopping-cart-title">
-                                <h3><a href="#">Demonissi Gori</a></h3>
-                                <span>Price: $275</span>
-                                <span class="qty">Qty: 01</span>
-                            </div>
-                            <div class="shopping-cart-delete">
-                                <a href="#"><i class="icofont icofont-ui-delete"></i></a>
-                            </div>
-                        </li>
+                        @endforeach
                     </ul>
                     <div class="shopping-cart-total">
-                        <h4>total: <span>$550.00</span></h4>
+                        <h4>total: <span>{{$subtotal}}</span></h4>
                     </div>
                     <div class="shopping-cart-btn">
-                        <a class="btn-style cr-btn" href="#">checkout</a>
+                        <a class="btn-style cr-btn" href="{{route('cart.index')}}">Go to Cart</a>
                     </div>
                 </div>
             </div>

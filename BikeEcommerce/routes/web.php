@@ -27,3 +27,6 @@ Route::resource('/division', 'DivisionController');
 Route::resource('/district', 'DistrictController');
 Route::resource('/social', 'SocialController');
 Route::resource('/postcategory', 'postCategoryController');
+Route::resource('/tag', 'tagController');
+Route::resource('/post', 'postController');
+Route::resource('/cart', 'cartController');

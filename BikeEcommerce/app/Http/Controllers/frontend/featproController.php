@@ -8,6 +8,8 @@ use App\Category;
 use App\product_image;
 use Image;
 use File;
+use Darryldecode\Cart\Facades\CartFacade;
+use Cart;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 

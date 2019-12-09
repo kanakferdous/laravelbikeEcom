@@ -1019,7 +1019,25 @@
     bottom: 45px;
     opacity: 1;
 }
-
+.product-action button {
+    background-color: transparent;
+    color: #202020;
+    display: inline-flex;
+    height: 38px;
+    justify-content: center;
+    margin: 0 5.5px;
+    padding: 7px 0;
+    transition: all 0.3s ease 0s;
+    width: 50px;
+    font-size: 18px;
+    border: 1px solid #e8e8e8;
+    position: relative;
+    cursor: pointer;
+}
+.product-action button:hover {
+    background-color: #ffb52f;
+    border: 1px solid #ffb52f;
+}
 .product-action a {
     background-color: transparent;
     color: #202020;

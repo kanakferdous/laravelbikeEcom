@@ -27,7 +27,6 @@
                                 </a>
                                 <!--Submenu-->
                                 <ul class="collapse">
-                                    <li><a href="/admin"><i class="fa fa-caret-right"></i> Dashboard</a></li>
                                     <li><a href="{{route('brand.index')}}"><i class="fa fa-caret-right"></i>All Brands</a></li>
                                     <li><a href="{{route('category.index')}}"><i class="fa fa-caret-right"></i>All Categories</a></li>
                                     <li><a href="{{route('product.index')}}"><i class="fa fa-caret-right"></i> Product List </a></li>
@@ -37,7 +36,20 @@
                             </li>
                             <li>
                                 <a href="#">
-                                <i class="fa fa-shopping-cart"></i>
+                                <i class="fa fa-rss-square"></i>
+                                <span class="menu-title">Blogs</span>
+                                <i class="arrow"></i>
+                                </a>
+                                <!--Submenu-->
+                                <ul class="collapse">
+                                    <li><a href="{{route('post.index')}}"><i class="fa fa-caret-right"></i>All Posts</a></li>
+                                    <li><a href="{{route('postcategory.index')}}"><i class="fa fa-caret-right"></i>All Categories</a></li>
+                                    <li><a href="{{route('tag.index')}}"><i class="fa fa-caret-right"></i>All Tags</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                <i class="fa fa-sliders"></i>
                                 <span class="menu-title">Theme Option</span>
                                 <i class="arrow"></i>
                                 </a>

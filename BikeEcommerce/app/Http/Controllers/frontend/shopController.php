@@ -5,6 +5,8 @@ namespace App\Http\Controllers\frontend;
 use App\Product;
 use App\Category;
 use App\brand;
+use Darryldecode\Cart\Facades\CartFacade;
+use Cart;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
