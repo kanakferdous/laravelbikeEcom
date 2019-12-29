@@ -14,10 +14,11 @@
 Route::get('/admin', 'backendController@index');
 Route::resource('/home', 'frontend\ProductController');
 Route::get('/home', 'frontend\featproController@index');
-Route::get('/home', 'frontend\frontendController@index');
+Route::get('/', 'frontend\frontendController@index');
 Route::get('/shop', 'frontend\shopController@index');
 Route::get('/product/category/{category}', 'frontend\shopController@category');
 Route::get('/product/brand/{brand}', 'frontend\shopController@brand');
+Route::resource('/checkout', 'CheckoutController');
 
 Route::resource('/brand', 'BrandController');
 Route::resource('/category', 'CategoryController');
@@ -30,3 +31,10 @@ Route::resource('/postcategory', 'postCategoryController');
 Route::resource('/tag', 'tagController');
 Route::resource('/post', 'postController');
 Route::resource('/cart', 'cartController');
+Route::resource('/order', 'OrderController');
+Auth::routes();
+// Admin Login
+Route::post('admin/login', 'admin\Auth\LoginController@login');
+Route::get('admin/login','admin\Auth\LoginController@showLoginForm')->name('admin.login');
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -2,13 +2,13 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Provider;
 use Illuminate\Support\Facades\Schema;
 
-class AppServiceProvider extends ServiceProvider
+class AppProvider extends Provider
 {
     /**
-     * Register any application services.
+     * Register any application s.
      *
      * @return void
      */
@@ -18,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
-     * Bootstrap any application services.
+     * Bootstrap any application s.
      *
      * @return void
      */

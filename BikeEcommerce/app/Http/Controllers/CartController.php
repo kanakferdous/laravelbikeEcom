@@ -79,11 +79,13 @@ class CartController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $product = Product::find($id);
-        $product->id = $request->id;
-        $product->name = $request->name;
-        $product->price = $request->price;
-        Cart::update($request->id, $request->name, $request->price, 1);
+        $quanty = $request->qty;
+        Cart::update($id, array(
+            'quantity' => array(
+                'relative' => false,
+                'value' => $quanty
+            ),
+        ));
         return redirect('/cart');
     }
 

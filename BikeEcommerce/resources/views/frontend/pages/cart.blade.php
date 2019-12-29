@@ -58,7 +58,12 @@
                     </td>
                     <td class="product-quantity">
                       <div class="quantity-range">
-                        <input class="input-text qty text" type="number" step="1" min="0" value="{{$item->quantity}}" title="Qty" size="4"/>
+                        <form action="{{'/cart/'. $item->id}}" method="POST">
+                          {{ csrf_field() }}
+                          {{method_field('PUT')}}
+                          <input name="qty" class="input-text qty text" type="number" step="1" min="0" value="{{$item->quantity}}" title="Qty" size="4"/>
+                          <button type="submit"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                        </form>
                       </div>
                     </td>
                     <td class="product-subtotal">{{$item->price * $item->quantity}}</td>
@@ -91,7 +96,7 @@
                   </button>
                 </div>
                 <div class="update-cart">
-                  <a class="btn-style cr-btn" href="#">
+                  <a class="btn-style cr-btn" href="{{route('checkout.index')}}">
                     <span>checkout</span>
                   </a>
                 </div>
